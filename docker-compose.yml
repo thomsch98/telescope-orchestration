@@ -10,7 +10,7 @@ telescope:
     - mongodb
 
 mongodb:
-  image: dockerfile/mongodb
+  image: mongo:3.0.1
   volumes:
     - data:/data/db
   expose:
