@@ -1,0 +1,28 @@
+telescope:
+  build: telescope-on-docker
+  ports:
+    - "3000:3000"
+  environment:
+    MONGO_URL: mongodb://mongodb:27017/telescope
+    ROOT_URL: http://telescope-hl.cloudapp.net
+  links:
+    - datadog
+    - mongodb
+
+mongodb:
+  image: dockerfile/mongodb
+  volumes:
+    - data:/data/db
+  expose:
+    - "27017"
+
+datadog:
+  image: datadog/docker-dd-agent:5.2.1
+  environment:
+    - API_KEY="LOOK AT https://app.datadoghq.com/account/settings#api"
+  privileged: true
+  volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+    - /proc/mounts:/host/proc/mounts:ro
+    - /sys/fs/cgroup/:/host/sys/fs/cgroup:ro
+
