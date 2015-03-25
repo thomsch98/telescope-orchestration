@@ -4,7 +4,7 @@ telescope:
     - "3000:3000"
   environment:
     MONGO_URL: mongodb://mongodb:27017/telescope
-    ROOT_URL: http://telescope-hl.cloudapp.net
+    ROOT_URL: "YOUR public endpoint / URL for telescope"
   links:
     - datadog
     - mongodb
