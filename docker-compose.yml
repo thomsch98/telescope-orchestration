@@ -20,6 +20,7 @@ datadog:
   image: datadog/docker-dd-agent:5.2.1
   environment:
     - API_KEY="LOOK AT https://app.datadoghq.com/account/settings#api"
+    - TAGS="Telescope"
   privileged: true
   volumes:
     - /var/run/docker.sock:/var/run/docker.sock
