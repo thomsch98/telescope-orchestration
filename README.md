@@ -6,4 +6,7 @@ telescope
 mongo
 datadog
 
-The telescope-on-docker repo can be found at https://github.com/thomsch98/telescope-on-docker.git
+To work properly, copy/rename the "template.env" to ".env" and modify it to meet your needs.
+
+This version does NOT use a proper data-container, 
+but uses the the underlying filesystem to provide "persistent" data.
