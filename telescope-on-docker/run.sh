@@ -1,2 +1,3 @@
-# git pull
+#!/usr/bin/env bash
+## git pull
 meteor
